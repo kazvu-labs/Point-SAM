@@ -19,14 +19,10 @@ Go to [PyTorch’s Get Started page](https://pytorch.org/get-started/locally/) a
 
 The command is:
 ```bash
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
-```
-- If you get a version error later, try `torch==2.1.0` and `torchvision==0.16.0` (these are tested versions for Point-SAM).
-
-Then:
-```bash
+pip install torch==2.1.0+cu128 torchvision==0.16.0+cu128 --index-url https://download.pytorch.org/whl/cu128
 pip install timm==0.9.0
 ```
+- If you get a version error later, try `torch==2.1.0` and `torchvision==0.16.0` (these are tested versions for Point-SAM).
 
 ---
 

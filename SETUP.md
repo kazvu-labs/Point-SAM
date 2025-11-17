@@ -1,10 +1,9 @@
-Great, you have CUDA 12.8! Here’s how to proceed with installing **Point-SAM** using your CUDA version:
+# Point SAM Setup 
 
----
 
 ### 1. **Create and Activate the Environment**
 ```bash
-conda create -n pointsam python=3.8
+conda create -n pointsam python=3.10
 conda activate pointsam
 ```
 

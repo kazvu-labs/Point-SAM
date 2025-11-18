@@ -3,8 +3,8 @@
 
 ### 1. **Create and Activate the Environment**
 ```bash
-conda create -n pointsam python=3.10
-conda activate pointsam
+python3.10 -m venv .venv
+source .venv/bin/activate
 ```
 
 ---
@@ -19,7 +19,7 @@ Go to [PyTorch’s Get Started page](https://pytorch.org/get-started/locally/) a
 
 The command is:
 ```bash
-pip install torch==2.9.1+cu128 torchvision==0.24.1+cu128 --index-url https://download.pytorch.org/whl/cu128
+pip install torch==2.3.0 torchvision==0.18.0 --index-url https://download.pytorch.org/whl/cu121
 pip install timm==0.9.0
 ```
 - If you get a version error later, try `torch==2.1.0` and `torchvision==0.16.0` (these are tested versions for Point-SAM).
@@ -27,10 +27,6 @@ pip install timm==0.9.0
 ---
 
 ### 3. **Install Third Party Modules**
-
-```bash
-conda install gxx_linux-64=9.3.0
-```
 
 **torkit3d**:
 ```bash
@@ -41,11 +37,8 @@ FORCE_CUDA=1 pip install third_party/torkit3d
 **apex** (for CUDA extensions):
 ```bash
 git submodule update --init third_party/apex
-pip install -v --disable-pip-version-check --no-cache-dir --no-build-isolation \
-  --config-settings "--build-option=--cpp_ext" --config-settings "--build-option=--cuda_ext" \
-  third_party/apex
+FORCE_CUDA=1 pip install --no-build-isolation third_party/apex
 ```
-If you encounter issues, you might need to build `apex` manually to ensure CUDA 12.8 compatibility.
 
 ---
 
@@ -60,6 +53,10 @@ pip install flask flask-cors
 ### 5. **Get or Download Pretrained Checkpoints**
 
 - Download from [Hugging Face](https://huggingface.co/yuchen0187/Point-SAM/tree/main)
+```bash
+wget https://huggingface.co/yuchen0187/Point-SAM/resolve/main/model.safetensors -O model.safetensors
+```
+
 
 ---
 

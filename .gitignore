@@ -33,3 +33,6 @@ model_ts*.txt
 .vscode
 _darcs
 /pretrained
+
+# virtual environments
+.venv/

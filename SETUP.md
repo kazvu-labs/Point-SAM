@@ -42,7 +42,18 @@ FORCE_CUDA=1 pip install --no-build-isolation third_party/apex
 
 ---
 
-### 4. **(Optional) Install Backend for Demo**
+### 4. Other Requirements 
+
+```bash
+pip install -e .
+pip install hydra-core
+
+```
+
+
+---
+
+### 5. **(Optional) Install Backend for Demo**
 
 ```bash
 pip install flask flask-cors
@@ -50,7 +61,7 @@ pip install flask flask-cors
 
 ---
 
-### 5. **Get or Download Pretrained Checkpoints**
+### 6. **Get or Download Pretrained Checkpoints**
 
 - Download from [Hugging Face](https://huggingface.co/yuchen0187/Point-SAM/tree/main)
 ```bash
@@ -60,17 +71,11 @@ wget https://huggingface.co/yuchen0187/Point-SAM/resolve/main/model.safetensors 
 
 ---
 
-### 6. **Run Point-SAM Demo**
+### 7. **Run Point-SAM Demo**
 
 Example:
 ```bash
-python demo/app.py --host localhost --port 5000 --pointcloud demo/static/models/scene.ply --checkpoint ./pretrained/model.safetensors
+python demo/app.py --host 0.0.0.0 --port 5000 --pointcloud demo/static/models/scene.ply --checkpoint ./pretrained/model.safetensors
 ```
 
 ---
-
-### **Additional Notes**
-- If you run into library version or CUDA compatibility errors, check PyTorch release notes for updated support for CUDA 12.8.
-- For training or evaluation, follow the script examples in the README.
-
-Would you like terminal commands for a specific step, troubleshooting for CUDA 12.8, or a guide for mesh/point-cloud demo?
